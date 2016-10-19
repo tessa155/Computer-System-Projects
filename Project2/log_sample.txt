@@ -1,0 +1,30 @@
+[13 05 2016 14:40](127.0.0.1)(5) client connected
+[13 05 2016 14:40](0.0.0.0) server secret = BEDB
+[13 05 2016 14:40](172.28.172.34)(6) client connected
+[13 05 2016 14:40](0.0.0.0) server secret = FBEA
+[13 05 2016 14:41:01](127.0.0.1)(soc_id 5) client's guess = BBBB
+[13 05 2016 14:41](0.0.0.0) server's hint = [2:0]
+[13 05 2016 14:41:07](172.28.172.34)(soc_id 6) client's guess = AAAA
+[13 05 2016 14:41](0.0.0.0) server's hint = [1:0]
+[13 05 2016 14:41:09](172.28.172.34)(soc_id 6) client's guess = AAAA
+[13 05 2016 14:41](0.0.0.0) server's hint = [1:0]
+[13 05 2016 14:41:11](172.28.172.34)(soc_id 6) client's guess = BBBB
+[13 05 2016 14:41](0.0.0.0) server's hint = [1:0]
+[13 05 2016 14:41:13](172.28.172.34)(soc_id 6) client's guess = CCCC
+[13 05 2016 14:41](0.0.0.0) server's hint = [0:0]
+[13 05 2016 14:41:20](127.0.0.1)(soc_id 5) client's guess = BEDB
+[13 05 2016 14:41](0.0.0.0) server's hint = [4:0]
+[13 05 2016 14:41:20](127.0.0.1)(soc_id 5) SUCCESS game over
+[13 05 2016 14:41:24](172.28.172.34)(soc_id 6) client's guess = FFFF
+[13 05 2016 14:41](0.0.0.0) server's hint = [1:0]
+[13 05 2016 14:41:26](172.28.172.34)(soc_id 6) client's guess = EEEE
+[13 05 2016 14:41](0.0.0.0) server's hint = [1:0]
+[13 05 2016 14:41:29](172.28.172.34)(soc_id 6) client's guess = FFEE
+[13 05 2016 14:41](0.0.0.0) server's hint = [2:0]
+[13 05 2016 14:41:31](172.28.172.34)(soc_id 6) client's guess = AABB
+[13 05 2016 14:41](0.0.0.0) server's hint = [0:2]
+[13 05 2016 14:41:34](172.28.172.34)(soc_id 6) client's guess = CCDD
+[13 05 2016 14:41](0.0.0.0) server's hint = [0:0]
+[13 05 2016 14:41:37](172.28.172.34)(soc_id 6) client's guess = DDAA
+[13 05 2016 14:41](0.0.0.0) server's hint = [1:0]
+[13 05 2016 14:41:37](172.28.172.34)(soc_id 6) FAILURE game over

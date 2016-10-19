@@ -1,0 +1,44 @@
+Student Name: Tessa(Hyeri) Song
+Login ID: songt
+
+Description
+
+ The main data structure to implement this simulation is linked-list. At first, this program parses the input data file and puts all processes into a queue based on linked list. In case of FCFS algorithm, it does not have to create another queue to simulate since the data file has been alreday sorted by arrival time. On the other hand, MLFQ does need to create three more queues with each queue having different quantum values which are 2, 4 and 8. In order to implement this simulation, a few appropriate flags are used inside the 'fcfs' and 'multi' functions, for instance, 'is_running' (to check if there is a process running currently), 'cur_level' (to indicate which queue level the current process is in at this moment) and 'quantum'(to represent the quantum value of current queue level).
+
+ When it comes to memory management, there is a separate script which includes all necessary and relevant functions. Basically, a 'memory manager' is created inside the each two main functions (fcfs, multi in simulation.c) and every time a new process starts to run 'put_process()' function is called and every time a process has finished, 'remove_process()' function is called. For one thing, if the process is already in the memory, put_procss() does not do anything.
+
+ The main structure of memory management itself is also a linked-list and each node represents either a process or a hole. This managment basically follows first fit algorithm, therefore whenever a process has to be put on memory, it searches a hole large enough from the start of the linked-list and if it cannot find one, swaps out the largest process node. In addition, consecutive holes are automatically combined as one hole, which can happen when removing processes from memory.
+
+
+Experiment
+
+1. Average Waiting time and standard deviation as burst time increases 
+(processes in input 5 has the biggest average burst time)
+
+       Input1          Input2          Input3          Input4          Input5
+
+FCFS   6.4(4.16)       16.4(11.17)     22.4(15.79)     32.0(23.16)     41.2(30.12)				
+
+MLFQ   11.8(6.22)      35.4(7.60)      41.4(8.96)      63.6(2.97)      82.0(8.21)	
+
+- Conclusion: Judging by the average waiting times itself, FCFS algorithm seems better than MLFQ. However, 
+if we consider the standard deviation as well, we cannot simply say that FCFS is a better algorithm since processes with later arrival time should wait until all the previous jobs have finished completely whereas MLFQ distributes running time to all processes reasonably fairly(good response time).
+
+
+2. Average Waiting time and standard deviation with different quantum values (input3 file is used)
+
+
+       Quantum(2,4,8)    Quantum(4,8,16)    Quantum(8,16,32)     Quantum(16,32,64)      Quantum(32,64,128)
+
+MLFQ   41.4(8.96)        46.4(4.62)         38.4(4.16)           43.8(19.04)            22.4(15.79)
+
+
+- Conclusion: According to this table, generally, the waiting time decreases and standard deviation increases as quantum values rises. Especially for the last quantum value, the simulation result is exactly the same with that of FCFS as expected. Consequently, if we choose too large quantum values, the response time will be as poor as that of FCFS algorithm, which suggests that we should be deliberate to choose appropriate quantum values yielding the best trade off.
+
+
+
+
+
+
+
+

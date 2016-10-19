@@ -1,0 +1,102 @@
+Student Name: Tessa(Hyeri) Song
+Login ID: songt
+
+- Performance
+The major measurement metric of performance of the server program is stability in connection with clients.
+The number of successfull connections with clients is taken into consideration to calculate this measurment.
+Each column in the tables below is the average of 10 experiments.
+
+
+1) server on digitalis
+
+client number                   5           10          15          20
+
+successfull connection(%)       100%        100%        100%        100%
+
+
+2) server on NeCTAR VM
+
+client number                   5           10          15          20
+
+successfull connection(%)       100%        100%        100%        100%
+
+
+Conclusion:
+Regardless of the host where the server program runs on, 
+it is able to make connection with concurrent clients successfully judging from the outcome of
+this performance metric (always 100%).
+Therefore, stability of the server program is very reliable in terms of concurrent connection.
+
+
+
+
+- Resource Usage
+In order to investigate resource usage, four major measurement metrics are chosen which are the total amount of time
+spent executing in either user mode or kernel mode, the total virtual memory size and resident set size.
+Each column in the tables below is the average of 5 experiments.
+
+
+1) Time in user mode (millisecond)
+
+client number                       5               10              15              20
+
+time in user mode(digitalis)        0               1.2             2.2             1.5
+
+time in user mode(NeCTAR VM)        20.2            16.3            28.7            40.4
+
+
+
+2) Time in kernel mode (millisecond)
+
+client number                       5               10              15              20
+
+time in kernel mode(digitalis)      6.3             24.6            15.6            22.9
+
+time in kernel mode(NeCTAR VM)      16.5            48.2            56.9            64.7
+
+
+Conclusion: 
+Generally, the server requires more execution time in kernel mode than in user mode since it includes 
+a lot of system calls to accomplish its tasks. 
+One of the interesting points is that VM takes much more execution time in comparision to digitalis both in 
+user mode and in kernel mode. This could be caused by the fact that digitalis is better host than this VM instance
+in terms of cpu performance and resources.  
+
+
+
+3) Total virtual memory size (kB)
+
+client number             5              10             15              20
+ 
+VmSize(digitalis)         389864.5       768764.9       1157908.8       1198884.2
+
+VmSize(NeCTAR VM)         375196.7       612784.8       653764.5        694744.1	
+
+
+4) Total resident set size (kB)
+
+client number             5             10               15              20
+
+VmRSS(digitalis)          836.7         1683.3           1030.4          1059.2
+
+VmRSS(NeCTAR VM)          1090.6        1050.1           3072.7          5132.9
+
+
+Conclusion: 
+Obviously, as the number of concurrent clients increases, total virtual and resident set size also increases.
+However, there is a distinct difference between digitalis and VM in terms of how much the total virtual 
+memory rises.
+
+The total virtual memory size of digitalis is ascending quite sharply whereas that of NeCTAR VM does not change much.
+This could be because the whole virtual memory of the VM is reasonably smaller than digitalis so that it could not 
+assign big portion of virtual memory to just one process.
+
+In respect of resident set size, generally, VM uses more RSS. Digitalis is a big host used by many users 
+so it should divide and assign its RAM to that many users and that is the reason why the sever is assigned 
+less RSS on digitalis than NeCTAR VM.
+
+
+
+
+
+

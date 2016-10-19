@@ -1,0 +1,6 @@
+Student Name : Tessa(Hyeri) Song
+Login id : songt
+
+ip address : 115.146.87.148
+port number : 6000
+
